@@ -20,7 +20,7 @@ namespace HideOut
             X = x;
             Y = y;
             _isAttack = false;
-            _moveCounter = SplashKit.Rnd(50, 60);
+            _moveCounter = SplashKit.Rnd(50, 59);
             _attackCounter = 20;
             _dir = new Point2D(3f, 4f);
             Velocity = velocity;
@@ -41,8 +41,8 @@ namespace HideOut
         public abstract void FindPlayerNearby(Player p, Room[] rooms);
         public Point2D SetRandomDirection(Room[] rooms)
         {
-            float a = SplashKit.Rnd(-314, 314) / 100;
-            float b = SplashKit.Rnd(-314, 314) / 100;
+            float a = SplashKit.Rnd(-314, 313) / 100;
+            float b = SplashKit.Rnd(-314, 313) / 100;
             _dir.X = (float)Math.Cos(a)*Velocity;
             _dir.Y = (float)Math.Sin(b)*Velocity;
             return _dir;

@@ -19,10 +19,8 @@ namespace HideOut
                 SplashKit.ClearScreen(Color.Black);
                 drawGameState.Draw();
                 drawGameState.UpdateGameState();
-                //gameManager.Update();
-                //gameManager.Draw();
-                SplashKit.RefreshScreen(60);
-                SplashKit.Delay(1000 / 60); // Ensure 60 FPS  
+                SplashKit.RefreshScreen(80);
+                SplashKit.Delay(1000 / 80); // Ensure 60 FPS  
             }
         }
     }

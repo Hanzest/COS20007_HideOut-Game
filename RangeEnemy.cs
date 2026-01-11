@@ -53,19 +53,19 @@ namespace HideOut
             }
             if (_moveCounter <= 0)
             {
-                if (SplashKit.Rnd(0, 10) >= 2)
+                if (SplashKit.Rnd(0, 9) >= 2)
                 {
                     Velocity = _rootVelocity * 1.8f;
                     _angle = Math.Atan2(p.Y - Y, p.X - X);
                     _dir.X = (float)Math.Cos(_angle) * Velocity;
                     _dir.Y = (float)Math.Sin(_angle) * Velocity;
-                    _moveCounter = SplashKit.Rnd(40, 60);
+                    _moveCounter = SplashKit.Rnd(40, 59);
                 }
                 else
                 {
                     Velocity = _rootVelocity;
                     SetRandomDirection(rooms);
-                    _moveCounter = SplashKit.Rnd(20, 40);
+                    _moveCounter = SplashKit.Rnd(20, 39);
                 }
             }
         }

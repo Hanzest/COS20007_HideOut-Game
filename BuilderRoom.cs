@@ -15,17 +15,17 @@ namespace HideOut
             {
                 for (int j = 0; j < roomSize; j++)
                 {
-                    if (i == 0 || i == roomSize - 1 || j == 0 || j == roomSize - 1)
+                    if (i == 0 || i == roomSize - 1 || j == 0 || j == roomSize - 1) // Walls
                     {
                         roomArray[i, j] = 2;
-                        if (i == 0 && (1 <= j && j <= roomSize - 2)
+                        if (i == 0 && (1 <= j && j <= roomSize - 2) // Horizontal Walls
                             || i == roomSize - 1)
                         {
                             roomArray[i, j] = 1;
                         }
                     } else
                     {
-                        int rnd = SplashKit.Rnd(0, 3);
+                        int rnd = SplashKit.Rnd(0, 2);
                         roomArray[i, j] = 0 + rnd * 10;
                     }
                 }
@@ -40,7 +40,7 @@ namespace HideOut
                 {
                     if (roomNumber == 2)
                     {
-                        int rnd2 = SplashKit.Rnd(0, 100);
+                        int rnd2 = SplashKit.Rnd(0, 99);
                         if (rnd2 < 20)
                         {
                             bool noBarrierSurrounding = true;

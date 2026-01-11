@@ -23,7 +23,7 @@ namespace HideOut
             _damage = damage;
             _energyCost = energyCost;
             _attackCooldown = attackCooldown;
-            int rnd = SplashKit.Rnd(1, 10);
+            int rnd = SplashKit.Rnd(1, 9);
             if (rnd > 7) {
                 _isCritical = true;
             }

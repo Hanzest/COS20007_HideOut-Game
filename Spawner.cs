@@ -51,8 +51,8 @@ namespace HideOut
                         }
                         checkInfLoop++;
                         
-                        int rnd1 = SplashKit.Rnd(4, room.RoomWidth - 5);
-                        int rnd2 = SplashKit.Rnd(4, room.RoomWidth - 5);
+                        int rnd1 = SplashKit.Rnd(4, room.RoomWidth - 6);
+                        int rnd2 = SplashKit.Rnd(4, room.RoomWidth - 6);
                         for (int i = rnd1 - 1; i <= rnd1 + 1; i++)
                         {
                             for (int j = rnd2 - 2; j <= rnd2 + 2; j++)

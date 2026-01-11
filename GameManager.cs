@@ -83,7 +83,7 @@ namespace HideOut
             if(saver.Level <= 3 && theme == 2)
             {
                 // Only allow theme 0 and 1 for level 1-3
-                theme = SplashKit.Rnd(0, 2);
+                theme = SplashKit.Rnd(0, 1);
             } else if (_saver.Level  == 10)
             {
                 theme = 2;
@@ -108,7 +108,7 @@ namespace HideOut
                 Console.WriteLine($"Player: {_player.Name} {_player.Health} {_player.Energy} {_player.Coin}");
                 if(_saver.Level == 10)
                 {
-                    int rnd = SplashKit.Rnd(0, 3);
+                    int rnd = SplashKit.Rnd(0, 1);
                     switch (rnd)
                     {
                         case 0:
@@ -142,7 +142,7 @@ namespace HideOut
                 _theme = 2;
             } else if(_saver.Level <= 3 && _theme == 2)
             {
-                _theme = SplashKit.Rnd(0, 2);
+                _theme = SplashKit.Rnd(0, 1);
             }
             _loader.LoadResource(_drawGameObject, _drawMap, _drawStatusBoard, _spawner, _theme);
             _map = new Map();
@@ -185,8 +185,8 @@ namespace HideOut
                     for(int i = 0; i < 8; i++)
                         // Create rewards
                     {
-                        int rndEnergy = SplashKit.Rnd(0, 4);
-                        int rndCoin = SplashKit.Rnd(0, 2);
+                        int rndEnergy = SplashKit.Rnd(0, 3);
+                        int rndCoin = SplashKit.Rnd(0, 1);
                         if(rndEnergy == 1)
                         {
                             _items.Add(_rewardFactory.Create("Energy Particle", character.X, character.Y));
@@ -229,8 +229,8 @@ namespace HideOut
                         mEnemy.FindPlayerNearby(_player, _map.Rooms);
                         if (mEnemy.IsAttack)
                         {
-                            _effects.Add(_effectFactory.Create("scratch", mEnemy.NearestEnemy(_characters).X + SplashKit.Rnd(-16, 16),
-                                mEnemy.NearestEnemy(_characters).Y + SplashKit.Rnd(-16, 8), mEnemy.FaceLeft));
+                            _effects.Add(_effectFactory.Create("scratch", mEnemy.NearestEnemy(_characters).X + SplashKit.Rnd(-16, 15),
+                                mEnemy.NearestEnemy(_characters).Y + SplashKit.Rnd(-16, 7), mEnemy.FaceLeft));
                         }
                         break;
                     case CharacterType.RangeEnemy:

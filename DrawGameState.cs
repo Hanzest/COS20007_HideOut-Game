@@ -42,7 +42,7 @@ namespace HideOut
             _characterIndex = 0;
             _isStartGame = false;
             _isWinGame = false;
-            _theme = SplashKit.Rnd(0, 3);
+            _theme = SplashKit.Rnd(0, 2);
             _bitmaps = new List<Bitmap>();
             _buffBitmaps = new List<Bitmap>();
             _characterLoader = new CharacterLoader();
@@ -57,8 +57,8 @@ namespace HideOut
             _gameManager = new GameManager();
             _characterLoader.Load(_bitmaps);
             _buffLoader.Load(_buffBitmaps);
-            _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count);
-            _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count);
+            _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
+            _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
             _bmpCoin = new Bitmap("coinDup", "Resource\\Icons\\coinDup.png");
             _instruction = new Bitmap("Instruction", "Resource\\Console\\Instruction.png");
         }
@@ -134,7 +134,7 @@ namespace HideOut
             }
             else if (!_gameManager.IsSetUp)
             {
-                _theme = SplashKit.Rnd(0, 3);
+                _theme = SplashKit.Rnd(0, 2);
                 _gameManager.SetUp(_bitmaps[_characterIndex].Name, _theme, _saver, ref _isStartGame, ref _buffManager);
             } else 
             {
@@ -254,8 +254,8 @@ namespace HideOut
                 // if the gameManager information is saved
             {
                 _saver = _gameManager.Saver;
-                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count);
-                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count);
+                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
+                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
                 _gameManager.FreeAll();
                 // clear data of game Manager, set local saver to false
                 _bmpCoin = SplashKit.LoadBitmap("coinDup", "Resource\\Icons\\coinDup.png");
@@ -265,8 +265,8 @@ namespace HideOut
             while ((_buffIndex1 == _buffIndex2 || _buffManager.GetBuffIndex(_buffIndex1) == 2 || _buffManager.GetBuffIndex(_buffIndex2) == 2) && cnt < 1000)
             {
                 cnt++;
-                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count);
-                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count);
+                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
+                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
             }
             if (cnt >= 1000)
             {
@@ -322,8 +322,8 @@ namespace HideOut
         {
             if (!_gameManager.IsNotLost)
             {
-                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count);
-                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count);
+                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
+                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
                 _gameManager.FreeAll();
                 _gameManager = new GameManager();
                 _saver.SaveLost();
@@ -339,8 +339,8 @@ namespace HideOut
         {
             if (!_isWinGame)
             {
-                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count);
-                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count);
+                _buffIndex1 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
+                _buffIndex2 = SplashKit.Rnd(0, _buffBitmaps.Count - 1);
                 _gameManager.FreeAll();
                 _gameManager = new GameManager();
                 _saver = _gameManager.Saver;

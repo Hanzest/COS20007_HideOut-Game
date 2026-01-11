@@ -13,8 +13,8 @@ namespace HideOut
         {}
         public Item? Create(string name, float x, float y)
         {
-            int rnd1 = SplashKit.Rnd(-24, 24);
-            int rnd2 = SplashKit.Rnd(-24, 24);
+            int rnd1 = SplashKit.Rnd(-24, 23);
+            int rnd2 = SplashKit.Rnd(-24, 23);
             x += rnd1;
             y += rnd2;
             switch (name)
